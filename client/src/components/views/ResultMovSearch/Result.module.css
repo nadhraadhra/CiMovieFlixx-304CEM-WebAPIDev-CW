@@ -1,0 +1,44 @@
+.result{ 
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result{
+  width: 220px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.result img{
+  display: block;
+  width: 100%;
+  height: 300px;
+}
+
+.result h3{
+  background: black;;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px;
+  transition: 0.2s ease-out;
+  height: 50px;
+  text-align: center;
+  margin: 0;
+}
+
+.result:hover h3{
+  background: rgb(202, 0, 61);
+  color: white;
+}
+.result:hover {
+  box-shadow: 0px 0px 8px 3px rgb(202, 0, 61);
+}
+
+.ant-btn:hover, .ant-btn:focus{
+  color: rgb(202, 0, 61);
+}

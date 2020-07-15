@@ -1,0 +1,28 @@
+.searchInputWrap{
+  padding: 30px 80px 10px 80px;
+}
+
+.searchInput {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid rgb(168, 0, 65);;
+  outline: none;
+  background: none;
+  background-color: black;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  transition: 0.4s ease-out;
+}
+
+::placeholder {
+  color: rgba(224, 223, 223, 0.774);
+  opacity: 1; /* Firefox */
+  font-size: smaller;
+}
+
+.searchInput:focus{
+  box-shadow: 0px 0px 8px 3px rgb(168, 0, 65);
+}

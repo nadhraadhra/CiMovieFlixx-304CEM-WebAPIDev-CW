@@ -1,0 +1,23 @@
+.genreContainer{
+    padding: 25px 20px 30px 26px;
+}
+
+.label{
+    display:table-cell;
+    margin: 20px;
+    border-radius: 4.2px;
+    width: 1%;
+    padding-top: 15px;
+    cursor: pointer;
+    background: rgb(168, 0, 65);
+    border: 1px solid black;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+.label:hover {
+    background: white;
+    color: rgb(168, 0, 65);
+    box-shadow: 0px 0px 1px 2px rgb(168, 0, 65);
+  }
