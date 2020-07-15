@@ -13,8 +13,8 @@
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server.js",
-    "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' --c 'red,green' \"nodemon server.js\" \"npm run client\" \"npm run start --prefix client\""
+    "client": "cd client && npm run dev",
+    "dev": "concurrently -n 'server,client' --c 'red,green' \"nodemon server.js\" \"npm run client\" \"npm run dev --prefix client\""
   },
   "author": "Nadhrah",
   "license": "ISC",
