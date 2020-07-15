@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "Website for movie",
   "main": "server.js",
-  "engine": {
-    "node": "10.16.0",
-    "npm": "6.9.0"
-  },
   "scripts": {
     "start": "node server.js",
     "backend": "nodemon server.js",
