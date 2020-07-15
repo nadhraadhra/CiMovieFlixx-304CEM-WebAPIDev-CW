@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "Website for movie",
   "main": "server.js",
+  "engine": {
+    "node": "10.16.0",
+    "npm": "6.9.0"
+  },
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "cd client && npm start",
+    "backend": "nodemon server.js",
+    "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
