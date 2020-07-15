@@ -1,10 +1,10 @@
 //Importing Modules
 
 const cors = require('cors')
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const path = require("path");
 
 const app = express();
@@ -30,12 +30,13 @@ mongoose.connect(config.mongoURI,
 app.use(cors())
 
 //to not get any deprecation warning or error
-app.use(bodyParser.urlencoded({ extended: true }));
+
+//app.use(bodyParser.urlencoded({ extended: true }));
 
 //CONFIGURATION // Body Parser and Cookie Parser Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false}));
-app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));
+//app.use(cookieParser());
 
 //Importing Routes both API and View to handle request
 app.use('/api/users', require('./server/routes/users'));
