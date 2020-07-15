@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Favorite } = require("../modelsSchema/Favorite");    //calling the favorite from schema
+const { Favorite } = require("../modelsSchema/Favorite");    //calling the favorite from module schema
 const { auth } = require("../middleware/auth");
 
 router.post("/favoriteNumber", auth, (req, res) => {
