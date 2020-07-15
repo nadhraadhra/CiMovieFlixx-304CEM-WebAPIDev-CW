@@ -4,8 +4,9 @@ This is an assignment project of 304CEM Web API Development
 
 To use this application, 
 
+1. make dev.js file inside config folder
+2. Put your own mongoDB info into dev.js file
+3. Type  " npm install " inside the root & client directory ( Download the server and front end dependencies)
 
-1. Type  " npm install " inside the root directory  ( Download Server Dependencies ) 
-2. Type " npm install " inside the client directory ( Download Front-end Dependencies )
 
-lastly run, "npm run dev"
+Lastly run, "npm run dev" :)
