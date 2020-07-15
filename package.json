@@ -9,12 +9,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
     "build": "cd client && npm run build",
-    "backend": "nodemon server.js",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node server.js",
     "client": "cd client && npm start",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "dev": "concurrently -n 'server,client' --c 'red,green' \"nodemon server.js\" \"npm run client\" \"npm run start --prefix client\""
   },
   "author": "Nadhrah",
   "license": "ISC",
