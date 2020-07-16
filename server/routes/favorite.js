@@ -3,6 +3,7 @@ const router = express.Router();
 const { Favorite } = require("../modelsSchema/Favorite");    //calling the favorite from module schema
 const { auth } = require("../middleware/auth");
 
+
 router.post("/favoriteNumber", auth, (req, res) => {
     //Find Favorite info inside favorite selction by movie id
     Favorite.find({"movieId" : req.body.movieId})

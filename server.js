@@ -4,11 +4,11 @@ const cors = require('cors')
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+//const cookieParser = require("cookie-parser");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 5000
+
 
 const config = require("./server/config/key");
 
@@ -30,12 +30,11 @@ mongoose.connect(config.mongoURI,
 app.use(cors())
 
 //to not get any deprecation warning or error
-
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //CONFIGURATION // Body Parser and Cookie Parser Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: false}));
 //app.use(cookieParser());
 
 //Importing Routes both API and View to handle request
@@ -53,10 +52,21 @@ if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
   });
+} else {
+  app.use(express.static(path.join(__dirname, "/client/public")));
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  });
 }
 
-//const PORT = process.env.PORT || 5000
+var exit = function exit() {
+  setTimeout(function () {
+    process.exit(1);
+  }, 0);
+};
 
+const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
   console.log(`Server Listening on ${PORT}`)
 });
+module.exports = app;
